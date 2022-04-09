@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="collectiblesAndArt.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/1cb0bb75dc.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+</body>
+
+
+<!-- top navber and bottom navbar -->
+
+<div id="sc1">
+    <div id="sc11">
+        <h4 id="sc111">Hi! <a href="signin.html">Sign in</a> or <a href="register.html">register</a></h4>
+        <h4> <a href="" style="color:black; text-decoration: none; ">Daily Deals</a></h4>
+        <h4><a href="" style="color:black;  text-decoration: none;">Help & Contact</a></h4>
+
+    </div>
+    <div id="sc12">
+        <h4>Sell </h4>
+        <h4>Watchlist <i class="fa-solid fa-angle-down"></i></h4>
+        <div id="helloMouse">
+            <h4 onclick="window.location.href='signin.html'">My eBay<i class="fa-solid fa-angle-down"></i></h4>
+            <div id="absolute_My_eBay">
+                <a href="">
+                    <p>Summary</p>
+                </a>
+                <a href="">
+                    <p>Recently Viewed</p>
+                </a>
+                <a href="">
+                    <p> Bids/Offers</p>
+                </a>
+                <a href="watchlist.html">
+                    <p>Watchlist</p>
+                </a>
+                <a href="">
+                    <p>Purchase History</p>
+                </a>
+                <a href="">
+                    <p>Buy Again</p>
+                </a>
+                <a href="">
+                    <p>Selling</p>
+                </a>
+                <a href="saved.html">
+                    <p>Saved Searches</p>
+                </a>
+                <a href="">
+                    <p>Saved Sellers</p>
+                </a>
+                <a href="">
+                    <p>Messages</p>
+                </a>
+
+            </div>
+        </div>
+        <div style="padding:3.5%;" id="sc121">
+            <i class="fa-solid fa-bell"></i>
+            <div id="sc122">
+                <h1>You are all caught up!</h1>
+            </div>
+
+        </div>
+        <div style="margin:5%;" id="sc13">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <div id="sc131">
+                <h1>Your cart is empty</h1>
+                <h3>Time to start shopping!</h3>
+            </div>
+            <P id="cartData">3</P>
+        </div>
+    </div>
+
+</div>
+<hr style="margin-top:-1%; color: #f1ebeb;">
+
+
+
+
+<!-- 
+        1st nav bar ends here
+    -->
+
+
+
+<div id="sc2">
+    <div id="sc21" onclick="window.location.href='index.html'">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/EBay_logo.svg/1200px-EBay_logo.svg.png"
+            alt="">
+    </div>
+
+    <div id="sc22">
+        <p>
+            Shop by category
+        </p>
+        <i class="fa-solid fa-angle-down"></i>
+    </div>
+    <div id="sc23">
+        <i class="fa-solid fa-magnifying-glass" style="margin-left: 5px;"></i>
+        <input type="text" name="" id="">
+        <div>
+            <button name="" id="">
+                All category
+            </button>
+            <i class="fa-solid fa-angle-down"></i>
+        </div>
+    </div>
+
+    <button>
+        Search
+    </button>
+</div>
+
+<div id="sc3">
+    <hr>
+</div>
+
+
+
+
+<div id="cartContainer">
+
+    <div id="left">
+        <p id="sellerT">Seller <a href="">Thrift.books</a></p>
+        <div id="mahaLeft">
+
+            <table>
+                <thead>
+
+                </thead>
+                <tbody id="tB">
+
+                </tbody>
+            </table>
+
+        </div>
+
+        <p id="extraQ"><a href="">Extra 10% off 4 or more items </a></p>
+        <p id="offAdd">Add:<span id="offAdd">3</span> more to qualify</p>
+
+    </div>
+
+
+    <div id="right">
+        <div onclick="gosomeWhere()" id="rightCheck">Go to Checkout</div>
+        <div id="rightQ">
+            <p>Item (<span id="realQty">1</span>)</p>
+            <p id="realP">US $ 12.27</p>
+        </div>
+
+        <div id="rightS">
+            <p>Shipping</p>
+            <p id="shipCharge">Free</p>
+        </div>
+
+        <hr>
+
+        <div id="rightSub">
+            <p>Subtotal</p>
+            <p id="totalAmount">US $ 12.27</p>
+        </div>
+
+    </div>
+
+</div>
+
+</html>
+
+
+
+<script>
+
+
+
+
+    let addingKey = JSON.parse(localStorage.getItem("Database")) || [];
+
+
+
+    for (let i = 0; i < addingKey.length; i++) {
+        if (!(addingKey[i].qty)) {
+            addingKey[i].qty = 1;
+        }
+    }
+    localStorage.setItem("Database", JSON.stringify(addingKey));
+    localStorage.setItem("yourCart", JSON.stringify(addingKey));
+
+
+
+    let cartD = JSON.parse(localStorage.getItem('yourCart'));
+
+    let tbody = document.getElementById('tB');
+
+    let mahaLeft = document.getElementById('mahaLeft');
+
+    function displayCart(cardD) {
+
+        // for (let i = 0; i < cardD.length; i++) {
+        //console.log(cardD[i].title);
+        tbody.innerHTML = null;
+
+        cardD.forEach((ele, index) => {
+
+
+            let row = document.createElement('tr');
+
+
+            let col1 = document.createElement('td');
+
+            let divImg = document.createElement('div');
+            divImg.id = 'cartImg';
+            let img = document.createElement('img');
+            img.src = ele.thumbnail;
+            divImg.append(img);
+            col1.append(divImg);
+
+
+            let col2 = document.createElement('td');
+
+            let divTitle = document.createElement('div');
+            divTitle.id = 'cartTDiv';
+            let title = document.createElement('p');
+            title.id = 'cartT';
+            let acc = document.createElement('p');
+            acc.id = 'cartAcc';
+            acc.innerText = "Accepeted";
+            title.innerText = ele.title;
+            divTitle.append(title, acc);
+            col2.append(divTitle);
+
+            let col3 = document.createElement('td');
+
+            let divQty = document.createElement('div');
+            divQty.id = "sQ";
+
+            let qty = document.createElement('p');
+            qty.innerText = "Qty";
+
+            let select = document.createElement('select');
+            select.innerHTML = `<option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>`;
+
+            select.id = "qty";
+            select.class = "qty123";
+
+
+
+            divQty.append(qty, select);
+            col3.append(divQty);
+
+            col4 = document.createElement('td');
+
+            let divPrice = document.createElement('div');
+            divPrice.id = "priceCart";
+            let price = document.createElement('p');
+
+            if (ele.price.raw) {
+                price.innerText = ele.price.raw;
+            }
+            else {
+                price.innerText = ele.price.to.raw;
+            }
+
+            price.id = "price001";
+
+            let shipping = document.createElement('p');
+
+            shipping.innerText = ele.shipping;
+            shipping.id = "shipping";
+            let rem = document.createElement('button');
+            rem.innerText = "Remove";
+            rem.id = "remove";
+            rem.addEventListener('click', () => {
+
+                remove(ele, index);
+
+            })
+            let saved = document.createElement('button');
+            saved.innerText = "Save it";
+            saved.id = "savedBtn"
+            let divbtn = document.createElement('div');
+            divbtn.id = "divbtn";
+            divbtn.append(saved, rem);
+            divPrice.append(price, shipping, divbtn);
+
+            col4.append(divPrice);
+
+            row.append(col1, col2, col3, col4);
+
+            tB.append(row);
+
+
+        });
+
+    }
+    displayCart(cartD);
+
+
+
+    let krr = document.querySelectorAll('#price001');
+
+    let arrPriceList = [];
+
+    for (let j = 0; j < krr.length; j++) {
+        arrPriceList.push(+ krr[j].innerText.substring(1, krr[j].innerText.length));
+    }
+
+    //console.log(arrPriceList);
+
+    let sum = 0;
+    for (let i = 0; i < arrPriceList.length; i++) {
+        sum += arrPriceList[i];
+    }
+
+
+
+    let krr2 = document.querySelectorAll('#qty');
+
+    let arr001 = arrPriceList.concat([]);
+
+    for (let i = 0; i < krr2.length; i++) {
+
+        krr2[i].addEventListener('change', () => {
+
+            addingKey[i].qty = +krr2[i].value;
+
+            localStorage.setItem("Database", JSON.stringify(addingKey));
+            localStorage.setItem("yourCart", JSON.stringify(addingKey));
+
+            krr[i].innerText = "US $ " + (arrPriceList[i] * (+krr2[i].value)).toFixed(2);
+            sum = sum - arr001[i];
+            arr001[i] = arrPriceList[i] * (+krr2[i].value);
+            sum = sum + arr001[i];
+            document.querySelector("#realP").innerText = "US $" + " " + sum.toFixed(2);
+            document.querySelector("#totalAmount").innerText = "US $" + " " + sum.toFixed(2);
+        })
+    }
+
+
+
+
+
+    function remove(ele, index) {
+
+        cartD.splice(index, 1);
+        localStorage.setItem('yourCart', JSON.stringify(cartD));
+        localStorage.setItem('Database', JSON.stringify(cartD));
+        location.reload();
+
+        //  cartD.splice(index,1);
+        // localStorage.setItem('yourCart', JSON.stringify(cartD));
+
+        //displayCart(cartD);
+
+    }
+
+
+
+
+    function gosomeWhere() {
+        window.location.href = "checkout.html";
+
+    }
+
+    document.querySelector("#realP").innerText = "US $" + " " + sum.toFixed(2);
+    document.querySelector("#totalAmount").innerText = "US $" + " " + sum.toFixed(2);
+
+
+    let sum2 = 0;
+    for (let i = 0; i < addingKey.length; i++) {
+        if (addingKey[i].shipping) {
+            if (!(addingKey[i].shipping.includes("Free"))) {
+                sum2 += (+addingKey[i].shipping.trim().split("$")[1].split(" ")[0]);
+
+            }
+        }
+
+    }
+
+
+    document.getElementById("shipCharge").innerText = "US $" + " " + sum2.toFixed(2);
+
+
+    document.querySelector("#totalAmount").innerText = "US $" + " " + (sum + sum2).toFixed(2);
+
+
+
+
+
+
+</script>
+
+
+
+
+<script>
+
+    let cat = JSON.parse(localStorage.getItem('yourCart')) || 0;
+
+    let xA = document.getElementById('cartData');
+    xA.innerHTML = cat.length;
+    xA.addEventListener('click', () => {
+        window.location.href = 'cart.html';
+    });
+
+    let flagfornav = JSON.parse(localStorage.getItem("flagforindex"))
+    let logindata = JSON.parse(localStorage.getItem("loginData"))
+    let namefornav = logindata[0].name
+
+
+
+    console.log(flagfornav)
+    if (flagfornav == true) {
+        console.log(namefornav)
+        document.querySelector("#sc111").textContent = namefornav
+    }
+
+</script>
+
+<script>
+    let shubham001 = document.querySelector("#sc23 > input[type=text]")
+
+    shubham001.addEventListener("keypress", function (event) {
+        if (event.code == "Enter") {
+            localStorage.setItem("search_term", shubham001.value);
+            window.location.href = "MahiArt.html";
+
+        }
+
+
+
+    })
+
+    document.querySelector("#sc2 > button").addEventListener("click", function (event) {
+
+
+        localStorage.setItem("search_term", shubham001.value)
+        window.location.href = "MahiArt.html"
+
+
+
+
+    })
+
+</script>

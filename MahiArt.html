@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/1cb0bb75dc.js" crossorigin="anonymous"></script>
+</head>
+<link rel="stylesheet" href="style/MahiArt.css">
+<link rel="stylesheet" href="style/Mahenav.css">
+<!-- <link rel="stylesheet" href="style/MSmartwatch.css"> -->
+<script src="MSdata.js"></script>
+<style>
+    #appendhere {
+        /* border: 1px solid red; */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        width: 80%;
+        margin-left: -30%;
+    }
+
+    #sold {
+        color: red
+    }
+
+    #artimage {
+        max-width: 200px;
+        height: 250px;
+
+    }
+
+    #bottom {
+        margin-left: -80px;
+        width: 100%;
+    }
+
+    #div1 {
+        /* border: 0.01px solid rgb(125, 125, 141); */
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        box-sizing: border-box;
+        padding: 3px;
+        max-width: 300px;
+    }
+
+    #price {
+        font-weight: bold;
+
+    }
+
+    #sprice {
+        color: rgb(100, 96, 96)
+    }
+
+    #spn {
+        font-size: 10px;
+        font-family: "Market Sans", Arial, sans-serif;
+    }
+
+    #name {
+        height: 120px;
+        font-size: 20px;
+    }
+
+    #pmitemImages {
+        max-width: 1000px;
+        display: flex;
+        overflow-x: scroll;
+        gap: 30px;
+    }
+
+    #pmitemImages>.mitemImages {
+        border: gray solid 1px;
+    }
+
+
+
+
+
+    #div1>#artimage {
+        max-width: 300px;
+    }
+
+
+
+
+
+
+
+
+    /* 1st navbar css part end here */
+</style>
+
+<body>
+
+
+
+
+
+
+
+
+    <div id="sc1">
+        <div id="sc11">
+            <h4 id="sc111">Hi! <a href="signin.html">Sign in</a> or <a href="register.html">register</a></h4>
+            <h4> <a href="" style="color:black; text-decoration: none; ">Daily Deals</a></h4>
+            <h4><a href="" style="color:black;  text-decoration: none;">Help & Contact</a></h4>
+
+        </div>
+        <div id="sc12">
+            <h4>Sell </h4>
+            <h4>Watchlist <i class="fa-solid fa-angle-down"></i></h4>
+            <div id="helloMouse">
+                <h4 onclick="window.location.href='signin.html'">My eBay<i class="fa-solid fa-angle-down"></i></h4>
+                <div id="absolute_My_eBay">
+                    <a href="">
+                        <p>Summary</p>
+                    </a>
+                    <a href="">
+                        <p>Recently Viewed</p>
+                    </a>
+                    <a href="">
+                        <p> Bids/Offers</p>
+                    </a>
+                    <a href="watchlist.html">
+                        <p>Watchlist</p>
+                    </a>
+                    <a href="">
+                        <p>Purchase History</p>
+                    </a>
+                    <a href="">
+                        <p>Buy Again</p>
+                    </a>
+                    <a href="">
+                        <p>Selling</p>
+                    </a>
+                    <a href="saved.html">
+                        <p>Saved Searches</p>
+                    </a>
+                    <a href="">
+                        <p>Saved Sellers</p>
+                    </a>
+                    <a href="">
+                        <p>Messages</p>
+                    </a>
+
+                </div>
+            </div>
+            <div style="padding:3.5%;" id="sc121">
+                <i class="fa-solid fa-bell"></i>
+                <div id="sc122">
+                    <h1>You are all caught up!</h1>
+                </div>
+
+            </div>
+            <div style="margin:5%;" id="sc13">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <div id="sc131">
+                    <h1>Your cart is empty</h1>
+                    <h3>Time to start shopping!</h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <hr style="margin-top:-1%; color: #f1ebeb;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 
+                1st nav bar ends here
+            -->
+
+
+
+    <div id="sc2">
+        <div id="sc21" onclick="window.location.href='index.html'">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/EBay_logo.svg/1200px-EBay_logo.svg.png"
+                alt="">
+        </div>
+
+        <div id="sc22">
+            <p>
+                Shop by category
+            </p>
+            <i class="fa-solid fa-angle-down"></i>
+        </div>
+        <div id="sc23">
+            <i class="fa-solid fa-magnifying-glass" style="margin-left: 5px;"></i>
+            <input type="text" name="" id="">
+            <div>
+                <button name="" id="">
+                    All category
+                </button>
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+        </div>
+
+        <button>
+            Search
+        </button>
+    </div>
+
+    <div id="sc3">
+        <hr>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pagediv" style="margin-top: 30px;">
+
+        <div id="center" style="padding-top: 0px; margin-top: 0px;">
+
+            <div id="left" b style="width: 600px;">
+                <h1>Art Supplies</h1>
+                <h4>Shop by Category</h4>
+                <p>Crafts</p>
+                <!-- dropdown menu -->
+
+
+            </div>
+
+            <div id="right" style="margin-top: 0px;">
+                <div id="pmitemImages">
+                    <div class="mitemImages">
+                        <img src="https://i.ebayimg.com/thumbs/images/g/vIMAAOSw8KJb0x0n/s-l225.webp" alt="">
+                        <h4> Cell Phones, Smart Watches & Accessories</h4>
+                    </div>
+
+                    <div class="mitemImages">
+                        <img src="https://i.ebayimg.com/thumbs/images/g/EVMAAOSwCnVb0x1D/s-l225.webp" alt="">
+                        <h4>Smart Watches</h4>
+                    </div>
+
+                    <div class="mitemImages">
+                        <img src="https://i.ebayimg.com/thumbs/images/g/C9IAAOSwv-xb0x1g/s-l225.webp" alt="">
+                        <h4> Video Games & Consoles</h4>
+                    </div>
+                    <div class="mitemImages">
+                        <img src="https://i.ebayimg.com/thumbs/images/g/cGUAAOSwTxpb0x1v/s-l225.webp" alt="">
+                        <h4>Computers, Tablets & Network Hardware</h4>
+                    </div>
+                    <div class="mitemImages">
+                        <img src="https://i.ebayimg.com/thumbs/images/g/lkMAAOSwy-5b0x1-/s-l225.webp" alt="">
+                        <h4> Cameras & Photo</h4>
+                    </div>
+                    <div class="mitemImages">
+                        <img src="https://i.ebayimg.com/thumbs/images/g/rhEAAOSwP3Jb0x2Q/s-l225.webp" alt="">
+                        <h4> Camera Drones</h4>
+                    </div>
+                    <div class="mitemImages">
+                        <img src="https://i.ebayimg.com/thumbs/images/g/M0gAAOSw5Xpb0x2j/s-l225.webp" alt="">
+                        <h4> Portable Audio & Headphones</h4>
+                    </div>
+                    <div class="mitemImages">
+                        <img src="https://i.ebayimg.com/thumbs/images/g/UuQAAOSwHSlb0x2z/s-l225.webp" alt="">
+                        <h4> TV, Video & Home Audio Electronics</h4>
+                    </div>
+                    <div class="mitemImages">
+                        <img src="https://i.ebayimg.com/thumbs/images/g/N9wAAOSwfONb0yLH/s-l225.webp" alt="">
+                        <h4> Vehicle Electronics & GPS</h4>
+                    </div>
+                    <div class="mitemImages">
+                        <img src="https://i.ebayimg.com/thumbs/images/g/nrIAAOSwCsRb0yJc/s-l225.webp" alt="">
+                        <h4> Smart Home</h4>
+                    </div>
+                </div>
+                <h2>Shop By Category</h2>
+
+                <div id="one">
+
+
+                    <!-- <div class="image" onclick="addFun('1')">
+                        <img class="img" src="https://i.ebayimg.com/thumbs/images/g/jIMAAOSwuTxV-ohS/s-l225.webp"
+                            alt="" />
+                        <p class="hov">Painting Supplies</p>
+                    </div>
+
+
+                    <div class="image" onclick="addFun('2')">
+                        <img class="img" src="https://i.ebayimg.com/thumbs/images/g/G1AAAOSw9r1V-ohS/s-l225.webp"
+                            alt="" />
+                        <p class="hov">Drawing & Lettering</p>
+                    </div>
+
+
+                    <div class="image" onclick="addFun('3')">
+                        <img class="img" src="https://i.ebayimg.com/thumbs/images/g/piQAAOSwNP5dU~2R/s-l225.webp"
+                            alt="" />
+                        <p class="hov">Printmaking</p>
+                    </div>
+
+                    <div class="image" onclick="addFun('4')">
+                        <img class="img" src="https://i.ebayimg.com/thumbs/images/g/0vMAAOSwEetV-ohV/s-l225.webp"
+                            alt="" />
+                        <p class="hov">Collage Supplies</p>
+                    </div>
+
+                    <div class="image" onclick="addFun('5')">
+                        <img class="img" src="https://i.ebayimg.com/thumbs/images/g/eOUAAOSwQPlV-ohS/s-l225.webp"
+                            alt="" />
+                        <p class="hov">Instruction Books and Media</p>
+                    </div> -->
+
+
+
+                </div>
+
+                <div id="bottom">
+
+                    <h2>limited time deals</h2>
+
+                    <div id="b1">
+
+                        <div id="sizeDiv">
+                            <div>
+                                <p class="hov">perfect choice</p>
+                            </div>
+                            <div>
+                                <p class="hov">elected</p>
+                            </div>
+                            <div>
+                                <p class="hov">see</p>
+                            </div>
+                            <div>
+                                <p class="hov">free coupen</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="b2">
+
+                        <div id="appendhere"></div>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+
+    <div id="footerpart"></div>
+
+</body>
+
+
+</html>
+
+<script type="module">
+
+
+
+    import { footer } from "./footer/footer.js"
+
+    var x = footer()
+
+    document.getElementById("footerpart").innerHTML = x
+</script>
+
+
+
+
+
+<script>
+
+
+
+    // function addFun(value) {
+
+    //     if (value == '1') {
+    //         localStorage.setItem("search_term", "Painting Supplies");
+
+    //         window.location.href = "CatArt.html";
+    //     }
+    //     else if (value == '2') {
+    //         localStorage.setItem("search_term", "Drawing & Lettering");
+    //         window.location.href = "CatArt.html";
+    //     }
+    //     else if (value == '3') {
+    //         localStorage.setItem("search_term", "Printmaking");
+    //         window.location.href = "CatArt.html";
+    //     }
+    //     else if (value == '4') {
+    //         localStorage.setItem("search_term", "Collage Supplies");
+    //         window.location.href = "CatArt.html";
+    //     }
+
+    //     else if (value == '5') {
+    //         localStorage.setItem("search_term", "Instruction Books and Media");
+    //         window.location.href = "CatArt.html";
+    //     }
+
+    // }
+
+    //localStorage.setItem("search_term", "mobile");
+    var arr = JSON.parse(localStorage.getItem("items"));
+    console.log(arr);
+
+    // console.log(data)
+
+
+
+    var dataArr = arr;
+
+    console.log(dataArr)
+
+
+    dataArr.forEach(function (el) {
+
+        var div1 = document.createElement("div")
+        div1.setAttribute("id", "div1")
+
+
+        let image = document.createElement("img")
+        image.src = el.thumbnail
+        image.setAttribute("id", "artimage")
+
+        let spn = document.createElement("p")
+        spn.innerText = el.spn;
+        spn.setAttribute("id", "spn")
+
+        let name = document.createElement("p")
+        name.innerText = el.title;
+        name.setAttribute("id", "name")
+
+        price = document.createElement("p")
+        try {
+            if (el.price.raw) {
+                price.innerText = el.price.raw;
+            } else {
+                price.innerText = el.price.to.raw;
+            }
+        } catch (error) {
+            console.log(error);
+        }
+
+
+        price.setAttribute("id", "price")
+
+        sprice = document.createElement("p")
+        sprice.innerText = el.shipping || " ";
+        sprice.setAttribute("id", "sprice")
+
+        sold = document.createElement("p")
+        if (el.extensions) {
+            sold.innerText = el.extensions[el.extensions.length - 1];
+        } else {
+            sold.innerText = "";
+        }
+
+        sold.setAttribute("id", "sold")
+
+
+        div1.append(image, spn, name, price, sprice, sold)
+        div1.addEventListener("click", function () {
+            let eeeeeeeeee = JSON.parse(localStorage.getItem("Database")) || [];
+            eeeeeeeeee.push(el);
+            localStorage.setItem("Database", JSON.stringify(eeeeeeeeee));
+            window.location.href = "review.html"
+        });
+
+        document.getElementById("appendhere").append(div1)
+
+
+    });
+    document.querySelector("#left > h1").innerHTML = localStorage.getItem("search_term")
+
+
+</script>
+<script>
+    let shubham001 = document.querySelector("#sc23 > input[type=text]")
+
+    shubham001.addEventListener("keypress", function (event) {
+        if (event.code == "Enter") {
+            localStorage.setItem("search_term", shubham001.value);
+            window.location.href = "MahiArt.html";
+
+        }
+
+
+
+    })
+
+    document.querySelector("#sc2 > button").addEventListener("click", function (event) {
+
+
+        localStorage.setItem("search_term", shubham001.value)
+        window.location.href = "MahiArt.html"
+
+
+
+
+    })
+
+</script>
+
+<script>
+    let flagfornav = JSON.parse(localStorage.getItem("flagforindex"))
+    let logindata = JSON.parse(localStorage.getItem("loginData"))
+    let namefornav = logindata[0].name
+
+
+
+    console.log(flagfornav)
+    if (flagfornav == true) {
+        console.log(namefornav)
+        document.querySelector("#sc111").textContent = namefornav
+    }
+</script>
+<script>
+    let nightmitemImages = document.querySelectorAll(".mitemImages>img");
+    let nighth4 = document.querySelectorAll(".mitemImages>h4");
+    let itemimages2 = document.querySelectorAll(".mitemImages");
+    for (let i = 0; i < nightmitemImages.length && i < arr.length; i++) {
+        nightmitemImages[i].src = arr[i].thumbnail;
+        nighth4[i].innerText = arr[i].title.trim().split(" ")[0] + " " + arr[i].title.trim().split(" ")[1] + " " + arr[i].title.trim().split(" ")[2] + " " + arr[i].title.trim().split(" ")[3] + " " + arr[i].title.trim().split(" ")[4];
+
+    }
+    for (let i = 0; i < nightmitemImages.length; i++) {
+
+        itemimages2[i].addEventListener("click", function () {
+            localStorage.setItem("search_term", nighth4[i].innerText);
+            window.location.href = "MahiArt.html";
+        });
+    }
+
+</script>

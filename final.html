@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ebay Final</title>
+    <link rel="stylesheet" href="./collectiblesAndArt.css">
+    <script src="https://kit.fontawesome.com/1cb0bb75dc.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+    <!-- top navber and bottom navbar -->
+
+    <div id="sc1">
+        <div id="sc11">
+            <h4 id="sc111">Hi! <a href="signin.html">Sign in</a> or <a href="register.html">register</a></h4>
+            <h4> <a href="" style="color:black; text-decoration: none; ">Daily Deals</a></h4>
+            <h4><a href="" style="color:black;  text-decoration: none;">Help & Contact</a></h4>
+
+        </div>
+        <div id="sc12">
+            <h4>Sell </h4>
+            <h4>Watchlist <i class="fa-solid fa-angle-down"></i></h4>
+            <div id="helloMouse">
+                <h4 onclick="window.location.href='signin.html'">My eBay<i class="fa-solid fa-angle-down"></i></h4>
+                <div id="absolute_My_eBay">
+                    <a href="">
+                        <p>Summary</p>
+                    </a>
+                    <a href="">
+                        <p>Recently Viewed</p>
+                    </a>
+                    <a href="">
+                        <p> Bids/Offers</p>
+                    </a>
+                    <a href="watchlist.html">
+                        <p>Watchlist</p>
+                    </a>
+                    <a href="">
+                        <p>Purchase History</p>
+                    </a>
+                    <a href="">
+                        <p>Buy Again</p>
+                    </a>
+                    <a href="">
+                        <p>Selling</p>
+                    </a>
+                    <a href="saved.html">
+                        <p>Saved Searches</p>
+                    </a>
+                    <a href="">
+                        <p>Saved Sellers</p>
+                    </a>
+                    <a href="">
+                        <p>Messages</p>
+                    </a>
+
+                </div>
+            </div>
+            <div style="padding:3.5%;" id="sc121">
+                <i class="fa-solid fa-bell"></i>
+                <div id="sc122">
+                    <h1>You are all caught up!</h1>
+                </div>
+
+            </div>
+            <div style="margin:5%;" id="sc13">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <div id="sc131">
+                    <h1>Your cart is empty</h1>
+                    <h3>Time to start shopping!</h3>
+                </div>
+                <P id="cartData">3</P>
+            </div>
+        </div>
+
+    </div>
+    <hr style="margin-top:-1%; color: #f1ebeb;">
+
+
+
+
+    <!-- 
+            1st nav bar ends here
+        -->
+
+
+
+    <div id="sc2">
+        <div id="sc21" onclick="window.location.href='index.html'">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/EBay_logo.svg/1200px-EBay_logo.svg.png"
+                alt="">
+        </div>
+
+        <div id="sc22">
+            <p>
+                Shop by category
+            </p>
+            <i class="fa-solid fa-angle-down"></i>
+        </div>
+        <div id="sc23">
+            <i class="fa-solid fa-magnifying-glass" style="margin-left: 5px;"></i>
+            <input type="text" name="" id="">
+            <div>
+                <button name="" id="">
+                    All category
+                </button>
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+        </div>
+
+        <button>
+            Search
+        </button>
+    </div>
+
+    <div id="sc3">
+        <hr>
+    </div>
+
+
+    <div id="wait01"><img
+            src="https://cdn.dribbble.com/users/225707/screenshots/2958729/attachments/615202/jelly-fluid-loader-attachment.gif"
+            alt=""></div>
+
+    <div id="count"></div>
+    <div id="completeForm">
+        <div id="thankDiv">
+            <p id="thankP">Thank you!</p>
+            <p>Your order has placed, and translator will start shortly..</p>
+            <p>Your order number is <span id="orderNo">342342</span></p>
+        </div>
+
+        <div id="nameDiv">
+            <p>Name</p>
+            <p id="fullN">Anand Singh Yadav</p>
+        </div>
+
+        <div id="itemDiv">
+            <p>Itme</p>
+            <p id="AI">6 items</p>
+        </div>
+
+        <div id="totalDiv">
+            <p>Total</p>
+            <p id="AT">US $ 98.00</p>
+        </div>
+
+        <div id="conB">
+            <button id="continueS" onclick="goBack()">Continue Shopping</button>
+        </div>
+
+
+    </div>
+
+
+
+</body>
+
+</html>
+
+<script>
+
+    let i = 0;
+    let flag = false;
+    var x = setInterval(function () {
+
+
+        //document.getElementById("count").innerHTML = i;
+
+        if (i == 5) {
+            flag = true;
+            clearInterval(x);
+        }
+        i++;
+        if (flag == true) {
+            document.getElementById("completeForm").style.display = "block";
+            document.getElementById("wait01").style.display = "none";
+            document.getElementById("count").style.display = "none";
+        }
+
+
+    }, 1000);
+
+
+
+    let fn = JSON.parse(localStorage.getItem("fullName"));
+
+    document.getElementById("fullN").innerHTML = fn;
+
+    let A = JSON.parse(localStorage.getItem("count"));
+
+    document.getElementById("AI").innerHTML = A + " " + "items";
+
+    let T = JSON.parse(localStorage.getItem("total"));
+
+    document.getElementById("AT").innerHTML = "US $"+T.toFixed(2);
+
+
+
+
+
+
+
+
+
+    function goBack() {
+        window.location.href = "./index.html";
+    }
+
+</script>
+
+
+
+<script>
+      let cat = JSON.parse(localStorage.getItem('yourCart')) || 0;
+
+let xA = document.getElementById('cartData');
+xA.innerHTML = cat.length;
+
+xA.addEventListener('click', () => {
+    window.location.href = 'cart.html';
+});
+
+
+    let flagfornav = JSON.parse(localStorage.getItem("flagforindex"))
+    let logindata = JSON.parse(localStorage.getItem("loginData"))
+    let namefornav = logindata[0].name
+
+
+
+    console.log(flagfornav)
+    if (flagfornav == true) {
+        console.log(namefornav)
+        document.querySelector("#sc111").textContent = namefornav
+    }
+
+</script>
+
+<script>
+    let shubham001 = document.querySelector("#sc23 > input[type=text]")
+
+    shubham001.addEventListener("keypress", function (event) {
+        if (event.code == "Enter") {
+            localStorage.setItem("search_term", shubham001.value);
+            window.location.href = "MahiArt.html";
+
+        }
+
+
+
+    })
+
+    document.querySelector("#sc2 > button").addEventListener("click", function (event) {
+
+
+        localStorage.setItem("search_term", shubham001.value)
+        window.location.href = "MahiArt.html"
+
+
+
+
+    })
+
+</script>
