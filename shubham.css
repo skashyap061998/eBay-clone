@@ -423,7 +423,7 @@ border: transparent;
 padding:5px;
 font-size:22px;
 /* border:1px solid green; */
-
+outline:none
 }
 #sc23 >div> button {
 height: 98%;
